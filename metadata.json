@@ -1,0 +1,6 @@
+{
+  "name": "Himanshu Edit Hub",
+  "description": "Professional video editing, creator subscriptions, and brand collaboration platform by Himanshu (@himanshu._.02348). Starting at just ₹10 per video.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
