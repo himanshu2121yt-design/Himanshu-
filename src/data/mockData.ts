@@ -12,14 +12,14 @@ import {
 export const INITIAL_SETTINGS: AppSettings = {
   appName: 'Himanshu Edit Hub',
   tagline: 'Edit. Create. Grow.',
-  creatorName: 'Himanshu',
+  creatorName: 'Himanshu Pandit',
   instagramHandle: '@himanshu._.02348',
   whatsappNumber: '+919876543210',
   emailAddress: 'himanshu2121yt@gmail.com',
   youtubeUrl: 'https://youtube.com',
   telegramUrl: 'https://t.me/himanshudits',
   upiId: 'himanshu2121@fam',
-  bankAccountName: 'Himanshu (Edit Hub)',
+  bankAccountName: 'Himanshu Pandit (Edit Hub)',
   autoVerifyUtr: false,
   upiEnabled: true,
   razorpayEnabled: true,
@@ -39,8 +39,8 @@ export const INITIAL_SETTINGS: AppSettings = {
 export const INITIAL_USERS: User[] = [
   {
     id: 'user-owner',
-    name: 'Himanshu',
-    email: 'himanshu2121yt@gmail.com',
+    name: 'Himanshu Pandit',
+    email: 'Pandit1@gmail.com',
     role: 'owner',
     isOwner: true,
     isDeveloper: true,
@@ -52,7 +52,7 @@ export const INITIAL_USERS: User[] = [
   {
     id: 'user-editor-1',
     name: 'Vaibhav',
-    email: 'vaibhav.editor@himanshuedits.com',
+    email: 'vaibhav21@gmail.com',
     role: 'editor',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
     instagram: '@vaibhav_cuts',

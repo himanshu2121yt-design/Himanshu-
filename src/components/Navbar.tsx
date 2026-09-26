@@ -169,7 +169,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
             className="hidden sm:flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 px-3.5 py-1.5 text-xs font-bold text-black shadow-lg shadow-amber-500/20 hover:from-amber-400 hover:to-amber-500 transition-all active:scale-95"
           >
             <Sparkles className="h-3.5 w-3.5 fill-black" />
-            Hire Himanshu
+            Hire Me (₹10)
           </button>
 
           {/* User Account / Role Menu */}

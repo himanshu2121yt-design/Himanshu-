@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { PortfolioItem } from '../types';
+import { OurTeam } from '../components/OurTeam';
 
 interface HomePageProps {
   setActiveTab: (tab: string) => void;
@@ -869,111 +870,13 @@ export const HomePage: React.FC<HomePageProps> = ({ setActiveTab, onSelectPortfo
 
       {/* MEET YOUR CORE TEAM (SHOWN TO CUSTOMERS) */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-[#111728] via-[#0d121e] to-[#090d16] p-8 sm:p-12 shadow-2xl space-y-8">
-          <div className="text-center max-w-2xl mx-auto space-y-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-400 uppercase tracking-wider border border-amber-500/20">
-              <Award className="h-3.5 w-3.5" /> Creative & Technical Leadership
-            </span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-black text-white">
-              Meet the Core Team Behind Your Edits
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Direct access to industry-grade video editing and responsive software engineering.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {/* Lead Video Editor: Vaibhav */}
-            <div className="group rounded-2xl border border-sky-500/30 bg-[#0b101c] p-6 hover:border-sky-400 transition-all shadow-xl space-y-4">
-              <div className="flex items-center gap-4">
-                <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80"
-                  alt="Vaibhav"
-                  className="h-16 w-16 rounded-2xl object-cover border-2 border-sky-400/50 shadow-md group-hover:scale-105 transition-transform"
-                />
-                <div>
-                  <span className="rounded-full bg-sky-500/20 px-2.5 py-0.5 text-[10px] font-extrabold uppercase text-sky-300 tracking-wider">
-                    Creative Production Lead
-                  </span>
-                  <h3 className="font-heading text-2xl font-black text-white mt-1">Vaibhav</h3>
-                  <p className="text-xs font-semibold text-sky-400">Lead Video Editor & Motion Artist</p>
-                </div>
-              </div>
-
-              <p className="text-xs text-slate-300 leading-relaxed">
-                Specializing in high-retention vertical reels, kinetic typography, pacing, color grading, and viral Alex Hormozi style captions that keep viewers glued.
-              </p>
-
-              <div className="flex flex-wrap gap-2 text-[10px]">
-                <span className="rounded bg-sky-500/10 border border-sky-500/20 px-2.5 py-1 text-sky-300 font-semibold">
-                  🎬 Premiere Pro & After Effects
-                </span>
-                <span className="rounded bg-sky-500/10 border border-sky-500/20 px-2.5 py-1 text-sky-300 font-semibold">
-                  ⚡ Sound Design & SFX
-                </span>
-                <span className="rounded bg-sky-500/10 border border-sky-500/20 px-2.5 py-1 text-sky-300 font-semibold">
-                  🔥 Viral Retention Hooks
-                </span>
-              </div>
-
-              <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs">
-                <span className="text-slate-400">Assigned Editor on Your Orders</span>
-                <button
-                  onClick={() => setActiveTab('hire-me')}
-                  className="text-sky-400 hover:text-sky-300 font-bold flex items-center gap-1"
-                >
-                  <span>Book with Vaibhav</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Lead Developer: Himanshu */}
-            <div className="group rounded-2xl border border-amber-500/30 bg-[#0b101c] p-6 hover:border-amber-400 transition-all shadow-xl space-y-4">
-              <div className="flex items-center gap-4">
-                <img
-                  src="/src/assets/images/himanshu_profile_1790318843205.jpg"
-                  alt="Himanshu"
-                  className="h-16 w-16 rounded-2xl object-cover border-2 border-amber-400/50 shadow-md group-hover:scale-105 transition-transform"
-                />
-                <div>
-                  <span className="rounded-full bg-amber-500/20 px-2.5 py-0.5 text-[10px] font-extrabold uppercase text-amber-300 tracking-wider">
-                    Studio Founder & Engineer
-                  </span>
-                  <h3 className="font-heading text-2xl font-black text-white mt-1">Himanshu</h3>
-                  <p className="text-xs font-semibold text-amber-400">Platform Developer & Studio Lead</p>
-                </div>
-              </div>
-
-              <p className="text-xs text-slate-300 leading-relaxed">
-                Architect of the Edit Hub platform, handling real-time UTR payment verification systems, automated delivery pipelines, and creator collaboration tooling.
-              </p>
-
-              <div className="flex flex-wrap gap-2 text-[10px]">
-                <span className="rounded bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 text-amber-300 font-semibold">
-                  💻 Full-Stack Architecture
-                </span>
-                <span className="rounded bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 text-amber-300 font-semibold">
-                  🛡️ Instant UTR Settlement
-                </span>
-                <span className="rounded bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 text-amber-300 font-semibold">
-                  🚀 Rapid Delivery Tech
-                </span>
-              </div>
-
-              <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs">
-                <span className="text-slate-400">System & Verification Lead</span>
-                <button
-                  onClick={() => setActiveTab('hire-me')}
-                  className="text-amber-400 hover:text-amber-300 font-bold flex items-center gap-1"
-                >
-                  <span>Start a Project</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <OurTeam
+          onSelectEditor={() => {
+            setActiveTab('hire-me');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          isInteractive={true}
+        />
       </section>
 
       {/* CREATOR ONBOARDING & MONTHLY PACKAGES BANNER */}

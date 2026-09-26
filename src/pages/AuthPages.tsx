@@ -44,7 +44,7 @@ export const AuthPages: React.FC<AuthPagesProps> = ({ setActiveTab, defaultMode 
     if (res.success) {
       setSuccessMsg(res.message);
       setTimeout(() => {
-        if (mode === 'developer' || targetEmail.toLowerCase() === 'himanshu2121yt@gmail.com') {
+        if (mode === 'developer' || targetEmail.toLowerCase() === 'himanshu2121yt@gmail.com' || targetEmail.toLowerCase() === 'pandit1@gmail.com') {
           setActiveTab('admin-dashboard');
         } else if (mode === 'editor' || targetEmail.toLowerCase().includes('vaibhav')) {
           setActiveTab('editor-dashboard');

@@ -1,0 +1,24 @@
+{
+  "short_name": "EditHub",
+  "name": "Himanshu Edit Hub — Video Editing & Creator Packages",
+  "description": "Professional video editing by Himanshu Pandit and Vaibhav starting at ₹10 per video. High-retention Instagram Reels, Shorts & Creator Packages.",
+  "icons": [
+    {
+      "src": "/src/assets/images/himanshu_logo_1790318843205.jpg",
+      "type": "image/jpeg",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/src/assets/images/himanshu_logo_1790318824908.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#090b10",
+  "theme_color": "#f59e0b",
+  "display": "standalone",
+  "orientation": "any"
+}

@@ -270,30 +270,50 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const loginWithCredentials = (email: string, pass: string, code2FA?: string) => {
     const cleanEmail = email.trim().toLowerCase();
     
-    // Check Developer (Himanshu) login:
-    // Only himanshu2121yt@gmail.com with password 'himanshu' can access
-    if (cleanEmail === 'himanshu2121yt@gmail.com') {
-      if (pass !== 'himanshu') {
+    // Check Owner & Visual Artist (Himanshu Pandit) login:
+    // Support Pandit1@gmail.com (Password: Pandit01) as well as developer email himanshu2121yt@gmail.com (Password: himanshu)
+    if (cleanEmail === 'pandit1@gmail.com' || cleanEmail === 'himanshu2121yt@gmail.com') {
+      if (cleanEmail === 'pandit1@gmail.com' && pass !== 'Pandit01') {
         return {
           success: false,
-          message: 'Access Denied: Incorrect developer password. Only authorized developer (Himanshu) can access this portal.',
+          message: 'Access Denied: Incorrect password for Pandit1@gmail.com.',
         };
       }
-      const developerUser = users.find((u) => u.email.toLowerCase() === 'himanshu2121yt@gmail.com') || INITIAL_USERS[0];
+      if (cleanEmail === 'himanshu2121yt@gmail.com' && pass !== 'himanshu' && pass !== 'Pandit01') {
+        return {
+          success: false,
+          message: 'Access Denied: Incorrect developer password.',
+        };
+      }
+      const developerUser = users.find((u) => u.role === 'owner') || INITIAL_USERS[0];
       setCurrentUser({
         ...developerUser,
+        name: 'Himanshu Pandit',
+        email: cleanEmail,
         role: 'owner',
         isOwner: true,
         isDeveloper: true,
       });
-      addNotification('Developer Session Started', 'Secure developer console unlocked for Himanshu.', 'order');
-      return { success: true, message: 'Welcome back, Himanshu (Developer & Studio Founder)!' };
+      addNotification('Owner Session Started', 'Secure owner console unlocked for Himanshu Pandit.', 'order');
+      return { success: true, message: 'Welcome back, Himanshu Pandit (Studio Founder & Lead Editor)!' };
     }
 
     // Check Editor (Vaibhav) login:
-    if (cleanEmail === 'vaibhav.editor@himanshuedits.com' || cleanEmail.startsWith('vaibhav')) {
+    // Support vaibhav21@gmail.com (Password: Vaibhav02)
+    if (cleanEmail === 'vaibhav21@gmail.com' || cleanEmail === 'vaibhav.editor@himanshuedits.com' || cleanEmail.startsWith('vaibhav')) {
+      if (cleanEmail === 'vaibhav21@gmail.com' && pass !== 'Vaibhav02') {
+        return {
+          success: false,
+          message: 'Access Denied: Incorrect password for vaibhav21@gmail.com.',
+        };
+      }
       const editorUser = users.find((u) => u.role === 'editor') || INITIAL_USERS[1];
-      setCurrentUser(editorUser);
+      setCurrentUser({
+        ...editorUser,
+        name: 'Vaibhav',
+        email: cleanEmail,
+        role: 'editor',
+      });
       addNotification('Editor Workstation Online', 'Workstation session active for Vaibhav.', 'order');
       return { success: true, message: 'Welcome back, Vaibhav (Lead Video Editor)!' };
     }

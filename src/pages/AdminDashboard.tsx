@@ -97,6 +97,7 @@ export const AdminDashboard: React.FC = () => {
   const [bankFeedModal, setBankFeedModal] = useState(false);
   const [copiedAdminUtr, setCopiedAdminUtr] = useState<string | null>(null);
   const [adminUtrToast, setAdminUtrToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+  const [showPasswords, setShowPasswords] = useState<Record<string, boolean>>({});
 
   // New portfolio item modal state
   const [newPortfolioModal, setNewPortfolioModal] = useState(false);
@@ -1374,8 +1375,120 @@ export const AdminDashboard: React.FC = () => {
           <div>
             <h3 className="font-heading text-xl font-bold text-white">Owner Security & Access Keys</h3>
             <p className="text-xs text-slate-400 mt-1">
-              Protected authentication for Himanshu (<strong className="text-white">himanshu2121yt@gmail.com</strong>).
+              Protected authentication for Himanshu Pandit (<strong className="text-white">Pandit1@gmail.com</strong> / <strong className="text-slate-300">himanshu2121yt@gmail.com</strong>).
             </p>
+          </div>
+
+          {/* CONFIDENTIAL WEBSITE EDITORS ACCESS VAULT (OWNER EYES ONLY) */}
+          <div className="rounded-2xl border border-amber-500/40 bg-gradient-to-r from-amber-500/10 via-[#101726] to-[#0c121e] p-5 sm:p-6 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3">
+              <div>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/20 px-2.5 py-0.5 text-[10px] font-black uppercase text-amber-300 border border-amber-500/40">
+                  <Lock className="h-3 w-3 text-amber-400" />
+                  Owner Confidential • Visible Only To You
+                </span>
+                <h4 className="font-heading text-lg font-bold text-white mt-1">
+                  Website Editors Credentials Vault
+                </h4>
+              </div>
+              <span className="text-[11px] text-slate-400">
+                Encrypted & accessible only inside this Owner Hub
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Editor 1: Vaibhav */}
+              <div className="rounded-xl border border-sky-500/30 bg-black/50 p-4 space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <img
+                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+                      alt="Vaibhav"
+                      className="h-9 w-9 rounded-full object-cover border border-sky-400/50"
+                    />
+                    <div>
+                      <h5 className="font-bold text-white text-xs">Editor 1: Vaibhav</h5>
+                      <span className="text-[10px] text-sky-400 font-semibold uppercase">Lead Video Editor</span>
+                    </div>
+                  </div>
+                  <span className="rounded bg-sky-500/20 px-2 py-0.5 text-[10px] font-bold text-sky-300">
+                    Active
+                  </span>
+                </div>
+
+                <div className="space-y-2 text-xs">
+                  <div>
+                    <span className="text-[10px] text-slate-400 block font-bold">Login Email:</span>
+                    <span className="font-mono text-white bg-white/5 px-2 py-1 rounded block mt-0.5 select-all border border-white/5">
+                      vaibhav21@gmail.com
+                    </span>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] text-slate-400 font-bold">Password:</span>
+                      <button
+                        type="button"
+                        onClick={() => setShowPasswords(p => ({ ...p, vaibhav: !p.vaibhav }))}
+                        className="text-[10px] text-amber-400 hover:text-amber-300 flex items-center gap-1"
+                      >
+                        <Eye className="h-3 w-3" />
+                        <span>{showPasswords['vaibhav'] ? 'Hide' : 'Reveal'}</span>
+                      </button>
+                    </div>
+                    <span className="font-mono text-amber-300 bg-white/5 px-2 py-1 rounded block mt-0.5 select-all border border-white/5">
+                      {showPasswords['vaibhav'] ? 'Vaibhav02' : '•••••••••'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Editor 2: Himanshu Pandit */}
+              <div className="rounded-xl border border-amber-500/30 bg-black/50 p-4 space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <img
+                      src="/src/assets/images/himanshu_profile_1790318843205.jpg"
+                      alt="Himanshu Pandit"
+                      className="h-9 w-9 rounded-full object-cover border border-amber-400/50"
+                    />
+                    <div>
+                      <h5 className="font-bold text-white text-xs">Editor 2: Himanshu Pandit</h5>
+                      <span className="text-[10px] text-amber-400 font-semibold uppercase">Owner & Visual Lead</span>
+                    </div>
+                  </div>
+                  <span className="rounded bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-300">
+                    Super Admin
+                  </span>
+                </div>
+
+                <div className="space-y-2 text-xs">
+                  <div>
+                    <span className="text-[10px] text-slate-400 block font-bold">Login Email:</span>
+                    <span className="font-mono text-white bg-white/5 px-2 py-1 rounded block mt-0.5 select-all border border-white/5">
+                      Pandit1@gmail.com
+                    </span>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] text-slate-400 font-bold">Password:</span>
+                      <button
+                        type="button"
+                        onClick={() => setShowPasswords(p => ({ ...p, pandit: !p.pandit }))}
+                        className="text-[10px] text-amber-400 hover:text-amber-300 flex items-center gap-1"
+                      >
+                        <Eye className="h-3 w-3" />
+                        <span>{showPasswords['pandit'] ? 'Hide' : 'Reveal'}</span>
+                      </button>
+                    </div>
+                    <span className="font-mono text-amber-300 bg-white/5 px-2 py-1 rounded block mt-0.5 select-all border border-white/5">
+                      {showPasswords['pandit'] ? 'Pandit01' : '•••••••••'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
